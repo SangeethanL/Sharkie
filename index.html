@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharkie</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsiveStyle.css">
+    <link rel="stylesheet" href="fullscreenStyle.css">
+    <script>intervals = [];</script>
+    <script src="js/models/drawable-object.class.js"></script>
+    <script src="js/models/movable-object.class.js"></script>
+    <script src="js/status-bars/life-status-bar.class.js"></script>
+    <script src="js/status-bars/coins-status-bar.class.js"></script>
+    <script src="js/status-bars/poison-status-bar.class.js"></script>
+    <script src="js/status-bars/endboss-life-status-bar.class.js"></script>
+    <script src="js/models/character/character.images.class.js"></script>
+    <script src="js/models/character/characterImagesSource.js"></script>
+    <script src="js/models/character/character.class.js"></script>
+    <script src="js/enemies/lila-jelly-fish.class.js"></script>
+    <script src="js/enemies/yellow-jelly-fish.class.js"></script>
+    <script src="js/enemies/green-jelly-fish.class.js"></script>
+    <script src="js/enemies/pink-jelly-fish.class.js"></script>
+    <script src="js/enemies/puffer-fish/pufferFish.images.class.js"></script>
+    <script src="js/enemies/puffer-fish/pufferFishImagesSource.js"></script>
+    <script src="js/enemies/puffer-fish/green-puffer-fish.js"></script>
+    <script src="js/enemies/puffer-fish/pink-puffer-fish.class.js"></script>
+    <script src="js/enemies/puffer-fish/lila-puffer-fish.class.js"></script>
+    <script src="js/enemies/endboss/endboss.images.class.js"></script>
+    <script src="js/enemies/endboss/endbossImagesSource.js"></script>
+    <script src="js/enemies/endboss/endboss.class.js"></script>
+    <script src="js/models/firstLight.class.js"></script>
+    <script src="js/models/secondLight.class.js"></script>
+    <script src="js/models/backgroundLayer.class.js"></script>
+    <script src="js/objects/bubble.class.js"></script>
+    <script src="js/objects/poisonedBubble.class.js"></script>
+    <script src="js/models/keyboard.class.js"></script>
+    <script src="js/objects/coins.class.js"></script>
+    <script src="js/objects/poison.class.js"></script>
+    <script src="js/objects/dark-poison-left.class.js"></script>
+    <script src="js/objects/dark-poison-right.class.js"></script>
+    <script src="js/objects/light-poison-left.class.js"></script>
+    <script src="js/objects/light-poison-right.class.js"></script>
+    <script src="js/models/level.class.js"></script>
+    <script src="js/levels/level1.js"></script>
+    <script src="js/models/world.class.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/gameCommands.js"></script>
+</head>
+
+<body onload="init();" id="HTMLbody" style="pointer-events: none;">
+    <div id="switchOrientation" style="display:none">
+        <string style="animation: zoom-in-zoom-out 2s ease infinite;">Please turn your device to landscape mode...
+        </string>
+    </div>
+
+
+    <div id="body">
+
+        <div id="headerContainer">
+            <img src="img/SharkieLogo.png" id="logo">
+            <div id="navbar" style="display:none;">
+                <div>
+                    <img src="img/6.Botones/soundOn.png" class="eachIcon" onclick="turnSoundOnOff('soundNavbar')"
+                        id="soundNavbar">
+                    <img src="img/6.Botones/fullScreen.png" class="eachIcon" onclick="fullScreen()" id="fullScreenNavbar">
+                    <img src="img/6.Botones/pause.png" class="eachIcon" onclick="pauseAndContinue()"
+                        id="pauseContinueNavbar">
+                    <img src="img/6.Botones/menu.png" class="eachIcon" onclick="openMenu()" id="menuNavbar">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="Screen">
+
+            <div id="StartScreen">
+
+                <div id="gameInformations" style="display:none;">
+                    <div class="closeButtonContainer">
+                        <string></string>
+                        <string class="closeButton" onclick="closeInformations()">X</string>
+                    </div>
+                    <div style="height: 75%; margin: 10px;">
+                        <h3>Game description</h3> <br>
+                        <p style="height: 70%; overflow-y: scroll;">This is Sharkie. <br>
+                            You are playing the character of a shark
+                            who has to collect coins and poison bottles <br>
+                            to attack the endboss.
+                            Every coin and every poison bottle is equal to one bubble attack. <br>
+                            You can also hit the enemies with bubble attacks, so they die.<br>
+                            The poison bottles are just useable for the endboss.<br>
+                            Enemies and the endboss can also be hit with fin slaps. <br>
+                            If you want to know what keys you need to press for the attacks go to the instructions.<br>
+                            Have fun playing!
+                            <br>
+                            <br>
+                            <b>Credits:</b>
+                            <br>
+                            <br>
+                            Music:<br>
+                            https://freesound.org/people/Mrthenoronha/sounds/512380/ <br>
+                            https://freesound.org/people/JavierZumer/sounds/257236/ <br>
+                            https://freesound.org/people/InspectorJ/sounds/271332/ <br>
+                            https://freesound.org/people/chevyskulls/sounds/240352/?<br>
+                            <br>
+                            Graphics:<br>
+                            https://vectorportal.com/vector/shark/35278 <br>
+                            https://www.freepik.com/free-vector/colorful-underwater-life-template_9581012.htm
+                        </p>
+                    </div>
+                </div>
+
+                <div id="icons">
+                    <img src="img/6.Botones/soundOn.png" class="eachIcon" onclick="turnSoundOnOff('soundStart')"
+                        id="soundStart">
+                    <img src="img/6.Botones/fullScreen.png" class="eachIcon" onclick="fullScreen()" id="fullScreen">
+                    <img src="img/6.Botones/information.png" class="eachIcon" onclick="openInformations()">
+                </div>
+
+
+                <div id="mainStartScreen">
+                    <div id="startScreenMenu">
+                        <div id="modeContainer"><span id="mode"></span>
+                            <label class="toggle">
+                                <input id="toggleswitch" type="checkbox" onclick="selectMode()">
+                                <span class="roundbutton"></span>
+                            </label>
+                        </div>
+                        <img src="img/6.Botones/Start/1.png" class="buttonsStartScreen" onclick="startPlaying()">
+                        <img src="img/6.Botones/Instructions.png" class="buttonsStartScreen"
+                            onclick="openInstructions()">
+                    </div>
+                </div>
+
+
+                <div id="instructions" style="display: none;">
+                    <img src="img/6.Botones/home.png" class="home" onclick="goBackToStartScreen()">
+                    <div class="descriptionArea">
+                        <div class="leftContainer">
+                            <img src="img/6.Botones/Key/D key.png" class="letter-key">
+                            <img src="img/6.Botones/Key/V key.png" class="letter-key">
+                            <img src="img/6.Botones/Key/arrow keys.png" class="arrow-keys">
+                            <img src="img/6.Botones/Key/Space Bar key.png" class="space">
+                        </div>
+                        <div class="rightContainer">
+                            <span class="description">
+                                <string>BUBBLE ATTACK</string>
+                            </span>
+                            <span class="description">
+                                <string>POISON ATTACK</string>
+                            </span>
+                            <span class="description desc-move-sharkie">
+                                <string>MOVE SHARKIE</string>
+                            </span>
+                            <span class="description">
+                                <string>FIN SLAP</string>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div id="CanvasScreen" style="display:none;">
+
+                <div id="overlayContainer" style="display:none;">
+                    <div id="menu">
+                        <div class="closeButtonContainer">
+                            <img src="img/6.Botones/return.png" id="returnButton" style="display: none;"
+                                onclick="goBackToMenu()">
+                            <string></string>
+                            <string class="closeButton" style="color: white;" onclick="closeMenu()">X</string>
+                        </div>
+
+                        <div class="mainMenuCSS">
+
+                            <div id="mainMenu">
+
+                                <div class="menuRow">
+                                    <button class="menuButton" onclick="openMenuInstructions()">INSTRUCTIONS</button>
+                                    <button class="menuButton" onclick="openMenuInformations()">GAME
+                                        INFORMATIONS</button>
+                                </div>
+
+                                <div class="menuRow">
+                                    <button class="menuButton" onclick="tryAgain()">START AGAIN</button>
+                                    <button class="menuButton" onclick="home()">HOME</button>
+                                </div>
+
+                            </div>
+
+                            <div id="menuInstructions" style="display: none;">
+                                <div class="menuDescriptionArea">
+                                    <div class="menuLeftContainer">
+                                        <img src="img/6.Botones/Key/D key.png" class="letter-key">
+                                        <img src="img/6.Botones/Key/V key.png" class="letter-key">
+                                        <img src="img/6.Botones/Key/arrow keys.png" class="arrow-keys">
+                                        <img src="img/6.Botones/Key/Space Bar key.png" class="space">
+                                    </div>
+                                    <div class="menuRightContainer">
+                                        <span class="description">BUBBLE ATTACK</span>
+                                        <span class="description">POISON ATTACK</span>
+                                        <span class="description desc-move-sharkie">MOVE SHARKIE</span>
+                                        <span class="description">FIN SLAP</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="menuInformations" style="display: none;">
+                                <div style="height: 100%; margin: 10px;">
+                                    <h3>Game description</h3>
+                                    <br>
+                                    <p style="height: 60%; overflow-y: scroll;">This is Sharkie. <br>
+                                        You are playing the character of a shark
+                                        who has to collect coins and poison bottles <br>
+                                        to attack the endboss.
+                                        Every coin and every poison bottle is equal to one bubble attack. <br>
+                                        You can also hit the enemies with bubble attacks, so they die.<br>
+                                        The poison bottles are just useable for the endboss.<br>
+                                        Enemies and the endboss can also be hit with fin slaps. <br>
+                                        If you want to know what keys you need to press for the attacks go to the
+                                        instructions.<br>
+                                        Have fun playing!
+                                        <br>
+                                        <br>
+                                        <b>Credits:</b>
+                                        <br>
+                                        <br>
+                                        Music:<br>
+                                        https://freesound.org/people/Mrthenoronha/sounds/512380/ <br>
+                                        https://freesound.org/people/JavierZumer/sounds/257236/ <br>
+                                        https://freesound.org/people/InspectorJ/sounds/271332/ <br>
+                                        https://freesound.org/people/chevyskulls/sounds/240352/?<br>
+                                        <br>
+                                        Graphics:<br>
+                                        https://vectorportal.com/vector/shark/35278 <br>
+                                        https://www.freepik.com/free-vector/colorful-underwater-life-template_9581012.htm
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div id="won" style="display: none;">
+                        <div>
+                            <button onclick="home()">HOME</button><button onclick="tryAgain()">REPEAT GAME</button>
+                        </div>
+                    </div>
+
+                    <div id="lost" style="display: none;">
+                        <h1 style="background-color: white; border-radius: 15px; padding: 20px;">YOU LOST!</h1>
+                        <div>
+                            <button onclick="home()">HOME</button><button onclick="tryAgain()">REPEAT GAME</button>
+                        </div>
+                    </div>
+                </div>
+
+                <canvas width="920" height="535" id="canvas" style="display: none;"></canvas>
+            </div>
+
+        </div>
+
+
+        <div id="responsiveArea">
+            <div class="responsiveButtons">
+                <div>
+                    <img src="img/6.Botones/up.png" id="upResponsive" class="mobileButtonSize">
+                    <img src="img/6.Botones/down.png" id="downResponsive" class="mobileButtonSize">
+                    <img src="img/6.Botones/left.png" id="leftResponsive" class="mobileButtonSize">
+                    <img src="img/6.Botones/right.png" id="rightResponsive" class="mobileButtonSize">
+                </div>
+                <img src="img/6.Botones/Space.png" id="spaceResponsive" class="mobileButtonSizeSpace">
+                <div>
+                    <img src="img/6.Botones/D.png" id="dResponsive" class="mobileButtonSize">
+                    <img src="img/6.Botones/V.png" id="vResponsive" class="mobileButtonSize">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

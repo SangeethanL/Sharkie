@@ -1,0 +1,510 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img/webpage-background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    backdrop-filter: blur(0.9px);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#switchOrientation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.02, 1.02);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+#headerContainer {
+    display: flex; 
+    justify-content:center; 
+    width: 100%;
+}
+
+#logo {
+    width: 340px; 
+    height: 65px;
+}
+
+#navbar {
+    width: 80%;
+}
+
+#navbar div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+#Screen {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+#StartScreen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-image: url("img/3. Background/StartScreenBackground.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 920px;
+    height: 535px;
+}
+
+#gameInformations {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 80%;
+    height: 80%;
+    top: 12%;
+    left: 10%;
+    z-index: 15;
+}
+
+#icons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 80%;
+    top: 5px;
+}
+
+.eachIcon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#mainStartScreen {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 80%;
+    right: 100px;
+}
+
+#startScreenMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: max-content;
+    height: 100%;
+}
+
+#modeContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#mode {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(44, 44, 44);
+    padding: 3px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.roundbutton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #33455e;
+    display: block;
+    transition: all 0.3s;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.roundbutton:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    display: block;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+input:checked+.roundbutton {
+    background-color: #f6ef13;
+}
+
+input:checked+.roundbutton:before {
+    transform: translate(40px, 0);
+}
+
+
+.buttonsStartScreen {
+    position: relative;
+    width: 200px;
+    height: 80px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#instructions {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 70%;
+}
+
+.home {
+    position: relative;
+    width: 45px;
+    height: 40px;
+    right: 15px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.descriptionArea {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    right: 5%;
+}
+
+.leftContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    height: 90%;
+    right: 5%;
+}
+
+.letter-key {
+    position: relative;
+    width: 45px;
+    height: 40px;
+    z-index: 1;
+}
+
+.arrow-keys {
+    position: relative;
+    width: 140px;
+    height: 80px;
+    z-index: 1;
+}
+
+.space {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    z-index: 1;
+}
+
+.rightContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    height: 90%;
+}
+
+.description {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: white;
+    height: 40px;
+}
+
+.description string {
+    background-color: black;
+}
+
+.desc-move-sharkie {
+    height: 80px;
+}
+
+#CanvasScreen {
+    position: relative;
+    width: 920px;
+    height: 535px;
+}
+
+canvas {
+    position: relative;
+    border-radius: 15px;
+    background-color: black;
+}
+
+#overlayContainer {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.463);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+#menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-image: url("img/3. Background/MenuBackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    border: 2px solid rgb(7, 88, 7);
+    border-radius: 50px;
+    width: 80%;
+    height: 80%;
+    top: 12%;
+    left: 10%;
+    z-index: 5;
+}
+
+.closeButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    max-height: 15%;
+}
+
+#returnButton {
+    width: 40px;
+    height: 40px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.closeButton {
+    font-size: 20px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.mainMenuCSS {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 85%;
+}
+
+#mainMenu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    bottom: 10%;
+}
+
+.menuRow {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.menuButton {
+    border: unset;
+    border: 2px solid white;
+    border-radius: 13px;
+    color: rgb(241, 241, 241);
+    font-weight: bold;
+    background-color: rgb(203, 110, 3);
+    padding: 20px;
+    cursor: pointer;
+}
+
+#menuInstructions {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.96);
+    width: 100%;
+    height: 75%;
+}
+
+.menuDescriptionArea {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+
+.menuLeftContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    height: 100%;
+}
+
+.menuRightContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+    height: 100%;
+    left: 5%;
+}
+
+#menuInformations {
+    position: relative;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.96);
+    width: 100%;
+    height: 75%;
+}
+
+#won {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url("img/6.Botones/won_backgroundImg.png");
+    background-size: 100% 100%;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+#won div {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 2%;
+}
+
+#won button {
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#won button:nth-child(1) {
+    background-color: rgba(124, 56, 7, 0.8);
+}
+
+#won button:nth-child(2) {
+    background-color: rgba(46, 154, 6, 0.8);
+}
+
+#lost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(197, 19, 19, 0.9);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+#lost div {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+#lost button {
+    color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#lost button:nth-child(1) {
+    background-color: rgba(124, 56, 7, 0.8);
+}
+
+#lost button:nth-child(2) {
+    background-color: rgba(46, 154, 6, 0.8);
+}
+
+#responsiveArea {
+    display: none;
+}
+
+.responsiveButtons {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mobileButtonSize {
+    width: 45px; 
+    height: 45px;
+    cursor: pointer;
+}
+
+.mobileButtonSizeSpace {
+    width: 100px; 
+    height: 45px;
+    cursor: pointer;
+}

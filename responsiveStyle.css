@@ -1,0 +1,481 @@
+@media (max-width: 1370px) {
+    #fullScreenNavbar {
+        display: none;
+    }
+
+    #fullScreen {
+        display: none;
+    }
+
+    #StartScreen {
+        width: 750px;
+        height: 420px;
+    }
+
+    #gameInformations {
+        font-size: 12px;
+    }
+
+    #gameInformations p {
+        height: 70% !important;
+        margin-top: 0px;
+    }
+
+    #CanvasScreen {
+        width: 750px;
+        height: 420px;
+    }
+
+    #canvas {
+        width: 750px;
+        height: 420px;
+    }
+
+    #icons {
+        top: 2px;
+    }
+
+    .eachIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+    #mainStartScreen {
+        right: 40px;
+    }
+
+    #mode {
+        font-size: 14px;
+        padding: 1px;
+    }
+
+    .toggle {
+        width: 40px;
+        height: 20px;
+    }
+
+    .roundbutton:before {
+        height: 10px;
+        width: 10px;
+        left: 5px;
+        bottom: 5px;
+    }
+
+    input:checked+.roundbutton:before {
+        transform: translate(20px, 0);
+    }
+
+    .buttonsStartScreen {
+        width: 110px;
+        height: 42px;
+    }
+
+    .home {
+        width: 27px;
+        height: 27px;
+        right: 10px;
+    }
+
+    .letter-key {
+        width: 22px;
+        height: 22px;
+    }
+
+    .arrow-keys {
+        width: 72px;
+        height: 42px;
+    }
+
+    .space {
+        width: 82px;
+        height: 22px;
+    }
+
+    .description {
+        font-size: 15px;
+        height: 27px;
+    }
+
+    .desc-move-sharkie {
+        height: 42px;
+    }
+
+    .closeButtonContainer {
+        max-height: 16%;
+    }
+
+    #returnButton {
+        width: 23px;
+        height: 23px;
+        margin: 15px;
+    }
+
+    .closeButton {
+        font-size: 23px;
+        margin: 15px;
+    }
+
+    .menuButton {
+        font-size: 15px;
+        font-weight: normal;
+        padding: 8px;
+    }
+
+    #menuInstructions {
+        height: 70%;
+        bottom: 10%;
+    }
+
+    #menuInformations {
+        font-size: 12px;
+        height: 70%;
+        bottom: 10%;
+    }
+
+    #menuInformations h3 {
+        margin-bottom: 0px;
+    }
+
+    #lost div {
+        width: 30%;
+    }
+
+    #lost, #won button {
+        font-size: 13px;
+    }
+
+    #responsiveArea {
+        display: unset;
+    }
+}
+
+@media (max-width: 1024px) {
+    #logo {
+        width: 160px; 
+        height: 30px;
+    }
+
+    #StartScreen {
+        width: 550px;
+        height: 270px;
+    }
+
+    #gameInformations {
+        font-size: 10px;
+    }
+
+    #gameInformations p {
+        height: 65% !important;
+    }
+
+    #CanvasScreen {
+        width: 550px;
+        height: 270px;
+    }
+
+    #canvas {
+        width: 550px;
+        height: 270px;
+    }
+
+    .eachIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #mode {
+        font-size: 12px;
+    }
+
+    .buttonsStartScreen {
+        width: 100px;
+        height: 40px;
+    }
+
+    .home {
+        width: 25px;
+        height: 25px;
+    }
+
+    .letter-key {
+        width: 20px;
+        height: 20px;
+    }
+
+    .arrow-keys {
+        width: 70px;
+        height: 40px;
+    }
+
+    .space {
+        width: 80px;
+        height: 20px;
+    }
+
+    .description {
+        height: 25px;
+    }
+
+    .desc-move-sharkie {
+        height: 40px;
+    }
+
+    .closeButtonContainer {
+        max-height: 16%;
+    }
+
+    #returnButton {
+        width: 17px;
+        height: 17px;
+        margin: 15px;
+    }
+
+    .closeButton {
+        font-size: 15px;
+        margin: 15px;
+    }
+
+    .menuButton {
+        font-size: 10px;
+        font-weight: normal;
+        padding: 5px;
+    }
+
+    #menuInformations {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 560px) {
+    #StartScreen {
+        width: 450px;
+        height: 270px;
+    }
+
+    #CanvasScreen {
+        width: 450px;
+        height: 270px;
+    }
+
+    #canvas {
+        width: 450px;
+        height: 270px;
+    }
+
+    .eachIcon {
+        width: 25px;
+        height: 25px;
+    }
+
+    #mainStartScreen {
+        right: 30px;
+    }
+
+    #mode {
+        font-size: 10px;
+    }
+
+    .closeButtonContainer {
+        max-height: 15%;
+    }
+
+    #lost div {
+        width: 40%;
+    }
+
+    .mobileButtonSize {
+        width: 40px; 
+        height: 40px;
+    }
+    
+    .mobileButtonSizeSpace {
+        width: 95px; 
+        height: 40px;
+    }
+}
+
+@media (max-width: 460px) {
+    #StartScreen {
+        width: 400px;
+        height: 250px;
+    }
+
+    #CanvasScreen {
+        width: 400px;
+        height: 250px;
+    }
+
+    #canvas {
+        width: 400px;
+        height: 250px;
+    }
+
+    .menuButton {
+        font-size: 9px;
+    }
+
+    .closeButtonContainer {
+        max-height: 16%;
+    }
+
+    .mobileButtonSize {
+        width: 35px; 
+        height: 35px;
+    }
+    
+    .mobileButtonSizeSpace {
+        width: 90px; 
+        height: 35px;
+    }
+}
+
+@media (max-width: 405px) {
+    #StartScreen {
+        width: 350px;
+        height: 250px;
+    }
+
+    #CanvasScreen {
+        width: 350px;
+        height: 250px;
+    }
+
+    #canvas {
+        width: 350px;
+        height: 250px;
+    }
+
+    .buttonsStartScreen {
+        width: 90px;
+        height: 30px;
+    }
+
+    .home {
+        width: 20px;
+        height: 20px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    #lost div {
+        width: 50%;
+    }
+
+    #lost, #won button {
+        font-size: 12px;
+    }
+
+    .mobileButtonSize {
+        width: 30px; 
+        height: 30px;
+    }
+    
+    .mobileButtonSizeSpace {
+        width: 85px; 
+        height: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    #StartScreen {
+        width: 300px;
+        height: 230px;
+    }
+
+    #CanvasScreen {
+        width: 300px;
+        height: 230px;
+    }
+
+    #canvas {
+        width: 300px;
+        height: 230px;
+    }
+
+    .eachIcon {
+        width: 20px;
+        height: 20px;
+    }
+
+    #mode {
+        font-size: 12px;
+        padding: 1px;
+    }
+
+    .toggle {
+        width: 30px;
+        height: 15px;
+    }
+
+    .roundbutton:before {
+        height: 9px;
+        width: 9px;
+        left: 3px;
+        bottom: 3px;
+    }
+
+    input:checked+.roundbutton:before {
+        transform: translate(15px, 0);
+    }
+
+    .closeButtonContainer {
+        max-height: 17%;
+    }
+
+    .mobileButtonSize {
+        width: 30px; 
+        height: 30px;
+    }
+    
+    .mobileButtonSizeSpace {
+        width: 85px; 
+        height: 30px;
+    }
+}
+
+@media (max-width: 305px) {
+    #StartScreen {
+        width: 270px;
+        height: 220px;
+    }
+
+    #CanvasScreen {
+        width: 270px;
+        height: 220px;
+    }
+
+    #canvas {
+        width: 270px;
+        height: 220px;
+    }
+
+    .letter-key {
+        width: 17px;
+        height: 17px;
+    }
+
+    .arrow-keys {
+        width: 60px;
+        height: 35px;
+    }
+
+    .space {
+        width: 75px;
+        height: 20px;
+    }
+
+    .description {
+        font-size: 12px;
+        height: 17px;
+    }
+
+    .desc-move-sharkie {
+        height: 35px;
+    }
+
+    .closeButtonContainer {
+        max-height: 18%;
+    }
+}

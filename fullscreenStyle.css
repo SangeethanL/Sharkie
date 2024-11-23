@@ -1,0 +1,73 @@
+:fullscreen #headerContainer {
+    background-color: rgb(24, 112, 184);
+}
+
+:fullscreen #Screen {
+    width: 100vw;
+    height: 92vh;
+}
+
+:fullscreen #StartScreen {
+    width: 100%;
+    height: 100%;
+}
+
+:fullscreen #CanvasScreen {
+    width: 100%;
+    height: 100%;
+}
+
+:fullscreen #canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Safari syntax */
+:-webkit-full-screen #headerContainer{
+    background-color: rgb(24, 112, 184);
+}
+
+:-webkit-full-screen #Screen{
+    width: 100vw;
+    height: 98vh;
+}
+
+:-webkit-full-screen #StartScreen{
+    width: 100%;
+    height: 100%;
+}
+
+:-webkit-full-screen #CanvasScreen{
+    width: 100%;
+    height: 100%;
+}
+
+:-webkit-full-screen #canvas{
+    width: 100%;
+    height: 100%;
+}
+
+/* IE11 syntax */
+:-ms-fullscreen #headerContainer{
+    background-color: rgb(24, 112, 184);
+}
+
+:-ms-fullscreen #Screen{
+    width: 100vw;
+    height: 98vh;
+}
+
+:-ms-fullscreen #StartScreen{
+    width: 100%;
+    height: 100%;
+}
+
+:-ms-fullscreen #CanvasScreen{
+    width: 100%;
+    height: 100%;
+}
+
+:-ms-fullscreen #canvas{
+    width: 100%;
+    height: 100%;
+}

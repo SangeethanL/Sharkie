@@ -1,0 +1,15 @@
+class PufferFish {
+    IMAGES_PUFFERFISH;
+    IMAGES_PUFFERFISH_COLLIDING;
+    IMAGES_PUFFERFISH_BUBBLESWIM;
+    IMAGES_PUFFERFISH_RETURN;
+    IMAGES_PUFFERFISH_DEAD;
+
+    constructor(pf, pfC, pfB, pfR, pfD) {
+        this.IMAGES_PUFFERFISH = pf;
+        this.IMAGES_PUFFERFISH_COLLIDING = pfC;
+        this.IMAGES_PUFFERFISH_BUBBLESWIM = pfB;
+        this.IMAGES_PUFFERFISH_RETURN = pfR;
+        this.IMAGES_PUFFERFISH_DEAD = pfD;
+    }
+}
